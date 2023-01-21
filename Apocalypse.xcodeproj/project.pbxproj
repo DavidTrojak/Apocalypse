@@ -7,15 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		637148F4296F21C8001EB2B7 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637148F3296F21C8001EB2B7 /* MKCoordinateRegion+Extension.swift */; };
+		638DB1A0296C888F004C14D9 /* DetailLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DB19F296C888F004C14D9 /* DetailLocationView.swift */; };
+		638DB1A2296C9EEB004C14D9 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DB1A1296C9EEB004C14D9 /* SideMenuView.swift */; };
+		638DB1A4296D375A004C14D9 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DB1A3296D375A004C14D9 /* CLLocationCoordinate2D+Extension.swift */; };
+		639A9DA42970A59C00A2574F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C322296ADDFE00EB4863 /* MainView.swift */; };
+		639A9DA52970A59D00A2574F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C322296ADDFE00EB4863 /* MainView.swift */; };
+		639A9DA62970A5A200A2574F /* DetailLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DB19F296C888F004C14D9 /* DetailLocationView.swift */; };
+		639A9DA72970A5A200A2574F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DB1A1296C9EEB004C14D9 /* SideMenuView.swift */; };
+		639A9DA82970A5A300A2574F /* DetailLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DB19F296C888F004C14D9 /* DetailLocationView.swift */; };
+		639A9DA92970A5A300A2574F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DB1A1296C9EEB004C14D9 /* SideMenuView.swift */; };
+		639A9DAA2970A5A700A2574F /* ApocalypseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C31B296ADDFE00EB4863 /* ApocalypseApp.swift */; };
+		639A9DAB2970A5A800A2574F /* ApocalypseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C31B296ADDFE00EB4863 /* ApocalypseApp.swift */; };
+		639A9DAC2970A5B700A2574F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C31D296ADDFE00EB4863 /* Persistence.swift */; };
+		639A9DAD2970A5B800A2574F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C31D296ADDFE00EB4863 /* Persistence.swift */; };
+		639A9DB32970AB4200A2574F /* LocationMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639A9DB22970AB4200A2574F /* LocationMapModel.swift */; };
 		63D8C31C296ADDFE00EB4863 /* ApocalypseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C31B296ADDFE00EB4863 /* ApocalypseApp.swift */; };
 		63D8C31E296ADDFE00EB4863 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C31D296ADDFE00EB4863 /* Persistence.swift */; };
 		63D8C321296ADDFE00EB4863 /* Apocalypse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C31F296ADDFE00EB4863 /* Apocalypse.xcdatamodeld */; };
-		63D8C323296ADDFE00EB4863 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C322296ADDFE00EB4863 /* ContentView.swift */; };
+		63D8C323296ADDFE00EB4863 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C322296ADDFE00EB4863 /* MainView.swift */; };
 		63D8C325296ADE0000EB4863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D8C324296ADE0000EB4863 /* Assets.xcassets */; };
 		63D8C329296ADE0000EB4863 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D8C328296ADE0000EB4863 /* Preview Assets.xcassets */; };
 		63D8C333296ADE0000EB4863 /* ApocalypseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C332296ADE0000EB4863 /* ApocalypseTests.swift */; };
 		63D8C33D296ADE0000EB4863 /* ApocalypseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C33C296ADE0000EB4863 /* ApocalypseUITests.swift */; };
 		63D8C33F296ADE0000EB4863 /* ApocalypseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C33E296ADE0000EB4863 /* ApocalypseUITestsLaunchTests.swift */; };
+		63D8C350296B572900EB4863 /* MLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C34F296B572900EB4863 /* MLocation.swift */; };
+		63D8C351296B572900EB4863 /* MLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C34F296B572900EB4863 /* MLocation.swift */; };
+		63D8C352296B572900EB4863 /* MLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C34F296B572900EB4863 /* MLocation.swift */; };
+		63D8C354296B584F00EB4863 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C353296B584F00EB4863 /* MainViewModel.swift */; };
+		63D8C355296B584F00EB4863 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C353296B584F00EB4863 /* MainViewModel.swift */; };
+		63D8C356296B584F00EB4863 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C353296B584F00EB4863 /* MainViewModel.swift */; };
+		63D8C358296B5EF000EB4863 /* NASAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C357296B5EF000EB4863 /* NASAData.swift */; };
+		63D8C359296B5EF000EB4863 /* NASAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C357296B5EF000EB4863 /* NASAData.swift */; };
+		63D8C35A296B5EF000EB4863 /* NASAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C357296B5EF000EB4863 /* NASAData.swift */; };
+		63D8C35D296B684600EB4863 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C35C296B684600EB4863 /* Date+Extension.swift */; };
+		63D8C361296BFAEB00EB4863 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C360296BFAEB00EB4863 /* DataService.swift */; };
+		63D8C362296BFAEB00EB4863 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C360296BFAEB00EB4863 /* DataService.swift */; };
+		63D8C363296BFAEB00EB4863 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C360296BFAEB00EB4863 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +64,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		637148F3296F21C8001EB2B7 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extension.swift"; sourceTree = "<group>"; };
+		638DB19C296C8217004C14D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		638DB19F296C888F004C14D9 /* DetailLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLocationView.swift; sourceTree = "<group>"; };
+		638DB1A1296C9EEB004C14D9 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		638DB1A3296D375A004C14D9 /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
+		639A9DB22970AB4200A2574F /* LocationMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapModel.swift; sourceTree = "<group>"; };
 		63D8C318296ADDFE00EB4863 /* Apocalypse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apocalypse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D8C31B296ADDFE00EB4863 /* ApocalypseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApocalypseApp.swift; sourceTree = "<group>"; };
 		63D8C31D296ADDFE00EB4863 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		63D8C320296ADDFE00EB4863 /* Apocalypse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Apocalypse.xcdatamodel; sourceTree = "<group>"; };
-		63D8C322296ADDFE00EB4863 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		63D8C322296ADDFE00EB4863 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		63D8C324296ADE0000EB4863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63D8C326296ADE0000EB4863 /* Apocalypse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apocalypse.entitlements; sourceTree = "<group>"; };
 		63D8C328296ADE0000EB4863 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -49,6 +83,12 @@
 		63D8C338296ADE0000EB4863 /* ApocalypseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApocalypseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D8C33C296ADE0000EB4863 /* ApocalypseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApocalypseUITests.swift; sourceTree = "<group>"; };
 		63D8C33E296ADE0000EB4863 /* ApocalypseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApocalypseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		63D8C34F296B572900EB4863 /* MLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLocation.swift; sourceTree = "<group>"; };
+		63D8C353296B584F00EB4863 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		63D8C357296B5EF000EB4863 /* NASAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAData.swift; sourceTree = "<group>"; };
+		63D8C35C296B684600EB4863 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		63D8C360296BFAEB00EB4863 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		63EFC6D6296F780E007F3E8F /* data.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.geojson; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +116,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		639A9D922970999A00A2574F /* preview */ = {
+			isa = PBXGroup;
+			children = (
+				63EFC6D6296F780E007F3E8F /* data.geojson */,
+			);
+			path = preview;
+			sourceTree = "<group>";
+		};
 		63D8C30F296ADDFE00EB4863 = {
 			isa = PBXGroup;
 			children = (
+				639A9D922970999A00A2574F /* preview */,
 				63D8C31A296ADDFE00EB4863 /* Apocalypse */,
 				63D8C331296ADE0000EB4863 /* ApocalypseTests */,
 				63D8C33B296ADE0000EB4863 /* ApocalypseUITests */,
@@ -99,9 +148,14 @@
 		63D8C31A296ADDFE00EB4863 /* Apocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				638DB19C296C8217004C14D9 /* Info.plist */,
+				63D8C35B296B682F00EB4863 /* Extensions */,
+				63D8C34E296B56F100EB4863 /* Services */,
+				63D8C34D296B56D200EB4863 /* Models */,
+				63D8C34C296B56C400EB4863 /* Views models */,
+				63D8C34B296B56BB00EB4863 /* Views */,
 				63D8C31B296ADDFE00EB4863 /* ApocalypseApp.swift */,
 				63D8C31D296ADDFE00EB4863 /* Persistence.swift */,
-				63D8C322296ADDFE00EB4863 /* ContentView.swift */,
 				63D8C324296ADE0000EB4863 /* Assets.xcassets */,
 				63D8C326296ADE0000EB4863 /* Apocalypse.entitlements */,
 				63D8C31F296ADDFE00EB4863 /* Apocalypse.xcdatamodeld */,
@@ -133,6 +187,52 @@
 				63D8C33E296ADE0000EB4863 /* ApocalypseUITestsLaunchTests.swift */,
 			);
 			path = ApocalypseUITests;
+			sourceTree = "<group>";
+		};
+		63D8C34B296B56BB00EB4863 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63D8C322296ADDFE00EB4863 /* MainView.swift */,
+				638DB19F296C888F004C14D9 /* DetailLocationView.swift */,
+				638DB1A1296C9EEB004C14D9 /* SideMenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63D8C34C296B56C400EB4863 /* Views models */ = {
+			isa = PBXGroup;
+			children = (
+				63D8C353296B584F00EB4863 /* MainViewModel.swift */,
+				639A9DB22970AB4200A2574F /* LocationMapModel.swift */,
+			);
+			path = "Views models";
+			sourceTree = "<group>";
+		};
+		63D8C34D296B56D200EB4863 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63D8C34F296B572900EB4863 /* MLocation.swift */,
+				63D8C357296B5EF000EB4863 /* NASAData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		63D8C34E296B56F100EB4863 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				63D8C360296BFAEB00EB4863 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		63D8C35B296B682F00EB4863 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				63D8C35C296B684600EB4863 /* Date+Extension.swift */,
+				638DB1A3296D375A004C14D9 /* CLLocationCoordinate2D+Extension.swift */,
+				637148F3296F21C8001EB2B7 /* MKCoordinateRegion+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +365,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638DB1A0296C888F004C14D9 /* DetailLocationView.swift in Sources */,
+				639A9DB32970AB4200A2574F /* LocationMapModel.swift in Sources */,
+				63D8C361296BFAEB00EB4863 /* DataService.swift in Sources */,
 				63D8C31C296ADDFE00EB4863 /* ApocalypseApp.swift in Sources */,
+				63D8C350296B572900EB4863 /* MLocation.swift in Sources */,
+				638DB1A2296C9EEB004C14D9 /* SideMenuView.swift in Sources */,
+				637148F4296F21C8001EB2B7 /* MKCoordinateRegion+Extension.swift in Sources */,
+				63D8C358296B5EF000EB4863 /* NASAData.swift in Sources */,
 				63D8C31E296ADDFE00EB4863 /* Persistence.swift in Sources */,
-				63D8C323296ADDFE00EB4863 /* ContentView.swift in Sources */,
+				63D8C323296ADDFE00EB4863 /* MainView.swift in Sources */,
 				63D8C321296ADDFE00EB4863 /* Apocalypse.xcdatamodeld in Sources */,
+				63D8C35D296B684600EB4863 /* Date+Extension.swift in Sources */,
+				63D8C354296B584F00EB4863 /* MainViewModel.swift in Sources */,
+				638DB1A4296D375A004C14D9 /* CLLocationCoordinate2D+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +386,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639A9DA62970A5A200A2574F /* DetailLocationView.swift in Sources */,
+				639A9DA42970A59C00A2574F /* MainView.swift in Sources */,
+				63D8C351296B572900EB4863 /* MLocation.swift in Sources */,
+				639A9DAA2970A5A700A2574F /* ApocalypseApp.swift in Sources */,
+				639A9DA72970A5A200A2574F /* SideMenuView.swift in Sources */,
+				639A9DAC2970A5B700A2574F /* Persistence.swift in Sources */,
 				63D8C333296ADE0000EB4863 /* ApocalypseTests.swift in Sources */,
+				63D8C362296BFAEB00EB4863 /* DataService.swift in Sources */,
+				63D8C359296B5EF000EB4863 /* NASAData.swift in Sources */,
+				63D8C355296B584F00EB4863 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +403,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639A9DA82970A5A300A2574F /* DetailLocationView.swift in Sources */,
+				63D8C352296B572900EB4863 /* MLocation.swift in Sources */,
+				63D8C363296BFAEB00EB4863 /* DataService.swift in Sources */,
+				639A9DAD2970A5B800A2574F /* Persistence.swift in Sources */,
 				63D8C33D296ADE0000EB4863 /* ApocalypseUITests.swift in Sources */,
+				639A9DA52970A59D00A2574F /* MainView.swift in Sources */,
+				63D8C35A296B5EF000EB4863 /* NASAData.swift in Sources */,
+				639A9DA92970A5A300A2574F /* SideMenuView.swift in Sources */,
 				63D8C33F296ADE0000EB4863 /* ApocalypseUITestsLaunchTests.swift in Sources */,
+				639A9DAB2970A5A800A2574F /* ApocalypseApp.swift in Sources */,
+				63D8C356296B584F00EB4863 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,8 +553,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Apocalypse/Preview Content\"";
 				DEVELOPMENT_TEAM = CCJWJRH47H;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Apocalypse/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ask for location ";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -463,8 +594,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Apocalypse/Preview Content\"";
 				DEVELOPMENT_TEAM = CCJWJRH47H;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Apocalypse/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ask for location ";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

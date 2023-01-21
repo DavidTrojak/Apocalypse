@@ -5,9 +5,12 @@
 //  Created by David Trojak on 08.01.2023.
 //
 
+@testable import Apocalypse
 import XCTest
 
 final class ApocalypseUITests: XCTestCase {
+    
+    var dataService: DataService!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

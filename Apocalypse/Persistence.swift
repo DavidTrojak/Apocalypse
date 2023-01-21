@@ -11,12 +11,42 @@ struct PersistenceController {
     static let shared = PersistenceController()
 
     static var preview: PersistenceController = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS"
+        
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        
+        if let url: URL = Bundle.main.url(forResource: "data", withExtension: "json") {
+            do {
+                let data: Data = try Data(contentsOf: url)
+                
+                let response = try JSONDecoder().decode([NASAData].self, from: data)
+                
+                let result = response.map { data in
+                    let newLoc = NASALocation(context: viewContext)
+                    newLoc.id = Int64(data.id!)!
+                    newLoc.nameType = data.nametype!
+                    newLoc.recclass = data.recclass!
+                    newLoc.mass = Double(data.mass ?? "0.0")!
+                    newLoc.fall = data.fall ?? ""
+                    
+                    let date = df.date(from: data.year ?? "1930-01-01T00:00:00.000") ?? Date()
+                    newLoc.year = Int16(date.get(.year))
+                    
+                    newLoc.latitude = Double(data.reclat ?? "0.0")!
+                    newLoc.longitude = Double(data.reclon ?? "0.0")!
+                    return newLoc
+                }
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("data.json not found")
         }
+         
+        
         do {
             try viewContext.save()
         } catch {

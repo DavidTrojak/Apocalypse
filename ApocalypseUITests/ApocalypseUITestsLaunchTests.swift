@@ -5,6 +5,7 @@
 //  Created by David Trojak on 08.01.2023.
 //
 
+@testable import Apocalypse
 import XCTest
 
 final class ApocalypseUITestsLaunchTests: XCTestCase {
@@ -21,6 +22,11 @@ final class ApocalypseUITestsLaunchTests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        
+        let btnView = app.otherElements["User location btn"]
+        
+        XCTAssertFalse(btnView.isHittable)
+    
         // Insert steps here to perform after app launch but before taking a screenshot,
         // such as logging into a test account or navigating somewhere in the app
 
