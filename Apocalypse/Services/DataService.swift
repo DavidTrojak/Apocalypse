@@ -67,7 +67,7 @@ class DataService {
                     completion((locs: [], type: .error))
                 }
             }
-        } else if (lastUpdate == nil || lastUpdate!.daysAgo() >= 0) {
+        } else if (lastUpdate == nil || lastUpdate!.daysAgo() > 0) {
             //old data
             completion((locs: self.locations ?? [], type: .refresh))
         } else {

@@ -11,12 +11,15 @@ import Foundation
 
 struct LocationListView: View {
     
-    @AppStorage("LocationOrder")
-    var locationOrderToUserLocation: Bool = false
+    @Environment(\.presentationMode)
+    var mode: Binding<PresentationMode>
     
-    let locations: [MLocation]
-    let userLocation: CLLocationCoordinate2D?
+    @Binding
+    var selectedLocation: Int?
+    @Binding
+    var selectedLocationUUID: UUID?
     
+    var locations: [MLocation]
     var distanceLocation: CLLocation?
     
     let formatStyle = Measurement<UnitLength>.FormatStyle(
@@ -26,18 +29,21 @@ struct LocationListView: View {
         numberFormatStyle: .number
     )
     
-    init (locations: [MLocation], userLocation: CLLocationCoordinate2D?) {
-        self.userLocation = userLocation
-        if let userLoc = self.userLocation {
+    init (model: MainViewModel, selectedLocation: Binding<Int?>, selectedLocationUUID: Binding<UUID?>) {
+        
+        self._selectedLocation = selectedLocation
+        self._selectedLocationUUID = selectedLocationUUID
+        
+        self.locations = model.locations.filter { $0.year >= model.selectedYear }
+        
+        if let userLoc = model.userLocation {
             let distanceLocation = CLLocation(latitude: userLoc.latitude,
                                      longitude: userLoc.longitude)
             self.distanceLocation = distanceLocation
             
-            self.locations = locations.sorted(by: {
-                $0.location.distance(from: distanceLocation) < $1.location.distance(from: distanceLocation)
-            })
-        } else {
-            self.locations = locations
+            self.locations.sort(by: {
+                    $0.location.distance(from: distanceLocation) < $1.location.distance(from: distanceLocation)
+                })
         }
     }
     
@@ -66,7 +72,13 @@ struct LocationListView: View {
                             Text("Fall: \(loc.fall)")
                             Text("Recclass: \(loc.recclass)")
                         }
-                    }
+                    }.onTapGesture {
+                        let index: Int = locations.firstIndex(where: {$0.id == loc.id})!
+                        self.selectedLocation = index
+                        self.selectedLocationUUID = loc.id
+                        // TODO move region to center if tapped area is not included
+                        self.mode.wrappedValue.dismiss()
+                    }.foregroundColor(self.selectedLocationUUID == loc.id ? Color.red : Color.primary)
                 }
             }
         }
@@ -76,7 +88,8 @@ struct LocationListView: View {
 
 struct LocationListView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationListView(locations: MLocation.preview,
-                         userLocation: LocationMapModel.defaultCoordinate)
+        LocationListView(model: MainViewModel(),
+                         selectedLocation: .constant(nil),
+                         selectedLocationUUID: .constant(nil))
     }
 }

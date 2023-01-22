@@ -47,7 +47,11 @@ struct SideMenuView: View {
                 bgClr
                 VStack(alignment: .center, spacing: 25) {
                     Spacer()
-                    Text("Total records: \(locations.count)").padding(5)
+                    VStack {
+                        Text("Records:").bold()
+                        Text("Total: \(locations.count)")
+                        Text("Filtered: \(locations.filter { $0.year >= self.selectedYear }.count)")
+                    }.padding(5)
                     Spacer()
                     Text("Minimal year: ").padding(10)
                     Picker("", selection: $selectedYear) {

@@ -57,12 +57,14 @@ struct MainView: View {
                         if let userLoc = mainVM.userLocation {
                             showLocBtn = !(userLoc == region.center)
                         }
+                        
                     }
                 }
                 .edgesIgnoringSafeArea(.bottom)
                 .toolbar() {
-                    NavigationLink(destination: LocationListView(locations: mainVM.locations,
-                                                                 userLocation: mainVM.userLocation)) {
+                    NavigationLink(destination: LocationListView(model: mainVM,
+                                                                 selectedLocation: self.$selectedLocation,
+                                                                 selectedLocationUUID: self.$selectedLocationUUID)) {
                         Label("Location list", systemImage: "list.bullet.rectangle.portrait")
                             .foregroundColor(Color.primary)
                             .padding(15)
