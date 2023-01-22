@@ -73,6 +73,6 @@ struct SideMenuView_Previews: PreviewProvider {
         SideMenuView(showMenu: .constant(true),
                      degreesMenuBtn: .constant(0),
                      selectedYear: .constant(2000),
-                     locations: [])
+                     locations: MLocation.preview)
     }
 }

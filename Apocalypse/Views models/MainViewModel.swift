@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import MapKit
 import CoreLocation
 
 class MainViewModel: ObservableObject {
@@ -23,7 +22,6 @@ class MainViewModel: ObservableObject {
     var userLocation: CLLocationCoordinate2D?
     
     init() {
-        
         locatiomModel = LocationMapModel()
         locatiomModel.setModel(self)
     }

@@ -11,22 +11,19 @@ import CoreLocation
 import CoreData
 
 struct MainView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     
     @StateObject
     private var mainVM = MainViewModel()
     
     @State
-    private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 49.5, longitude: 15.1),
-                                    span: MKCoordinateSpan(latitudeDelta: 10,
-                                                           longitudeDelta: 10))
+    private var region = MKCoordinateRegion(center: LocationMapModel.defaultCoordinate,
+                                            span: MKCoordinateSpan(latitudeDelta: 10,
+                                                                   longitudeDelta: 10))
     
     @State
     private var sheetShown = false
-    
     @State
     private var showMenu = false
-    
     @State
     private var showLocBtn = false
     
@@ -64,6 +61,12 @@ struct MainView: View {
                 }
                 .edgesIgnoringSafeArea(.bottom)
                 .toolbar() {
+                    NavigationLink(destination: LocationListView(locations: mainVM.locations,
+                                                                 userLocation: mainVM.userLocation)) {
+                        Label("Location list", systemImage: "list.bullet.rectangle.portrait")
+                            .foregroundColor(Color.primary)
+                            .padding(15)
+                    }
                     Button {
                         withAnimation {
                             self.degreesMenuBtn += 90

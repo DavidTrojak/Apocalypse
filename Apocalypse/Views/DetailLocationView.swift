@@ -28,9 +28,10 @@ struct DetailLocationView: View {
             }
             if let p = self.place {
                 Text("Selected place:").padding(20)
+                Text("Name: \(p.name)")
                 Text("Position: \(p.latitude), \(p.longitude)")
                 Text("Year: \(p.year)")
-                Text("Mass: \(round(100 * p.mass) / 100) g")
+                Text("Mass: \(p.getMass())")
                 Text("Fall: \(p.fall)")
                 Text("Recclass: \(p.recclass)")
             } else {
@@ -44,6 +45,6 @@ struct DetailLocationView: View {
 
 struct DetailLocationView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailLocationView()
+        DetailLocationView(place: MLocation.preview.first)
     }
 }

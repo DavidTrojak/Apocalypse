@@ -10,6 +10,8 @@ import MapKit
 
 class LocationMapModel:  NSObject, CLLocationManagerDelegate  {
     
+    static let defaultCoordinate = CLLocationCoordinate2D(latitude: 49.5, longitude: 15.1)
+    
     let locationManager = CLLocationManager()
     
     var model: MainViewModel?
