@@ -176,6 +176,7 @@ class DataService {
         let persistedObjects: [NASALocation] = locations.map { loc in
             let newLoc = NASALocation(context: viewContext)
             newLoc.id = Int64(loc.extId)
+            newLoc.name = loc.name
             newLoc.nameType = loc.nametype
             newLoc.recclass = loc.recclass
             newLoc.mass = loc.mass
