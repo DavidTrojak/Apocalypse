@@ -16,22 +16,11 @@ struct MainView: View {
     private var mainVM = MainViewModel()
     
     @State
-    private var region = MKCoordinateRegion(center: LocationMapModel.defaultCoordinate,
-                                            span: MKCoordinateSpan(latitudeDelta: 10,
-                                                                   longitudeDelta: 10))
-    
-    @State
     private var sheetShown = false
     @State
     private var showMenu = false
     @State
     private var showLocBtn = false
-    
-    @State
-    var selectedLocation: Int?
-    
-    @State
-    var selectedLocationUUID: UUID?
     
     @State
     private var degreesMenuBtn = 0.0
@@ -41,19 +30,19 @@ struct MainView: View {
             ZStack {
                 VStack {
                     // TODO - Publishing changes from within view updates is not allowed, this will cause undefined behavior.
-                    Map (coordinateRegion: $region, annotationItems: mainVM.locations.filter { $0.year >= mainVM.selectedYear } ) { place in
+                    Map (coordinateRegion: $mainVM.locationModel.region, annotationItems: mainVM.locations.filter { $0.year >= mainVM.selectedYear } ) { place in
                         MapAnnotation(coordinate: place.coordinate) {
                             Image(systemName: "target")
-                                .scaleEffect(selectedLocationUUID == place.id ? 2.5 : 0.7)
-                                .foregroundColor(selectedLocationUUID == place.id ? Color.red : Color.orange)
+                                .scaleEffect(mainVM.selectedLocationUUID == place.id ? 2.5 : 0.7)
+                                .foregroundColor(mainVM.selectedLocationUUID == place.id ? Color.red : Color.orange)
                                 .onTapGesture {
                                     let index: Int = mainVM.locations.firstIndex(where: {$0.id == place.id})!
-                                    self.selectedLocation = index
-                                    self.selectedLocationUUID = place.id
+                                    mainVM.selectedLocation = index
+                                    mainVM.selectedLocationUUID = place.id
                                     self.sheetShown.toggle()
                                 }
                         }
-                    }.onChange(of: region) { region in
+                    }.onChange(of: mainVM.locationModel.region) { region in
                         if let userLoc = mainVM.userLocation {
                             showLocBtn = !(userLoc == region.center)
                         }
@@ -62,9 +51,7 @@ struct MainView: View {
                 }
                 .edgesIgnoringSafeArea(.bottom)
                 .toolbar() {
-                    NavigationLink(destination: LocationListView(model: mainVM,
-                                                                 selectedLocation: self.$selectedLocation,
-                                                                 selectedLocationUUID: self.$selectedLocationUUID)) {
+                    NavigationLink(destination: LocationListView(model: mainVM)) {
                         Label("Location list", systemImage: "list.bullet.rectangle.portrait")
                             .foregroundColor(Color.primary)
                             .padding(15)
@@ -82,7 +69,7 @@ struct MainView: View {
                     }
                 }
                 .sheet(isPresented: $sheetShown) {
-                    DetailLocationView(place: mainVM.locations[selectedLocation ?? 0])
+                    DetailLocationView(place: mainVM.getSelectedLocation())
                 }
                 SideMenuView(showMenu: self.$showMenu,
                              degreesMenuBtn: self.$degreesMenuBtn,
@@ -93,8 +80,8 @@ struct MainView: View {
                     
                     Button {
                         showLocBtn.toggle()
-                        region.center.latitude = mainVM.userLocation!.latitude
-                        region.center.longitude = mainVM.userLocation!.longitude
+                        mainVM.locationModel.region.center.latitude = mainVM.userLocation!.latitude
+                        mainVM.locationModel.region.center.longitude = mainVM.userLocation!.longitude
                     } label: {
                         Image(systemName: "mappin.circle.fill")
                             .scaleEffect(showLocBtn ? 1.9 : 0)

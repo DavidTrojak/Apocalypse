@@ -8,9 +8,14 @@
 import Foundation
 import MapKit
 
-class LocationMapModel:  NSObject, CLLocationManagerDelegate  {
+class LocationMapModel:  NSObject, ObservableObject, CLLocationManagerDelegate  {
     
     static let defaultCoordinate = CLLocationCoordinate2D(latitude: 49.5, longitude: 15.1)
+    
+    @Published
+    var region = MKCoordinateRegion(center: LocationMapModel.defaultCoordinate,
+                                            span: MKCoordinateSpan(latitudeDelta: 10,
+                                                                   longitudeDelta: 10))
     
     let locationManager = CLLocationManager()
     

@@ -14,11 +14,7 @@ struct LocationListView: View {
     @Environment(\.presentationMode)
     var mode: Binding<PresentationMode>
     
-    @Binding
-    var selectedLocation: Int?
-    @Binding
-    var selectedLocationUUID: UUID?
-    
+    var model: MainViewModel
     var locations: [MLocation]
     var distanceLocation: CLLocation?
     
@@ -29,10 +25,9 @@ struct LocationListView: View {
         numberFormatStyle: .number
     )
     
-    init (model: MainViewModel, selectedLocation: Binding<Int?>, selectedLocationUUID: Binding<UUID?>) {
+    init (model: MainViewModel) {
         
-        self._selectedLocation = selectedLocation
-        self._selectedLocationUUID = selectedLocationUUID
+        self.model = model
         
         self.locations = model.locations.filter { $0.year >= model.selectedYear }
         
@@ -73,12 +68,9 @@ struct LocationListView: View {
                             Text("Recclass: \(loc.recclass)")
                         }
                     }.onTapGesture {
-                        let index: Int = locations.firstIndex(where: {$0.id == loc.id})!
-                        self.selectedLocation = index
-                        self.selectedLocationUUID = loc.id
-                        // TODO move region to center if tapped area is not included
+                        model.centerToSelectedLocation(locUUID: loc.id)
                         self.mode.wrappedValue.dismiss()
-                    }.foregroundColor(self.selectedLocationUUID == loc.id ? Color.red : Color.primary)
+                    }.foregroundColor(model.selectedLocationUUID == loc.id ? Color.red : Color.primary)
                 }
             }
         }
@@ -88,8 +80,6 @@ struct LocationListView: View {
 
 struct LocationListView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationListView(model: MainViewModel(),
-                         selectedLocation: .constant(nil),
-                         selectedLocationUUID: .constant(nil))
+        LocationListView(model: MainViewModel())
     }
 }
